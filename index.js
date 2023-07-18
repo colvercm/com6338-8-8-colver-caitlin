@@ -9,7 +9,7 @@ form.onsubmit = function(e) {
     var searchQuery = this.search.value
     if (!searchQuery) return
     form.search.value = ""
-    fetch(URL + KEY + searchQuery)    
+    fetch(URL + searchQuery + KEY)    
     .then(function(res) {
         return res.json()
     })
@@ -21,7 +21,6 @@ form.onsubmit = function(e) {
         weather.appendChild(notFound)
     })
 } 
-
 
 function getWeather(data){
     weather.innerHTML = ""
